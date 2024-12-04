@@ -20,6 +20,10 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             {
                 urunler = urunler.Where(y => y.UrunAd.Contains(p));
             }
+            if (urunler.Any())
+            {
+                urunler = urunler.Where(y => y.Durum == true);
+            }
             return View(urunler.ToList());
         }
 
