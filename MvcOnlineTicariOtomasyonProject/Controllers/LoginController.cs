@@ -44,7 +44,7 @@ namespace MvcOnlineTicariOtomasyonProject.Controllers
             var bilgiler = c.Carilers.FirstOrDefault(x => x.CariMail == ca.CariMail && x.CariSifre == ca.CariSifre);
             if (bilgiler != null)
             {
-                FormsAuthentication.SetAuthCookie(bilgiler.CariMail, false);
+                FormsAuthentication.SetAuthCookie(bilgiler.CariMail, false); 
                 Session["CariMail"] = bilgiler.CariMail.ToString();
                 return RedirectToAction("Index", "CariPanel");
             }
