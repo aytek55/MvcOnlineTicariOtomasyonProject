@@ -7,8 +7,8 @@ using MvcOnlineTicariOtomasyonProject.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
-    //[Authorize]
-    //[Authorize(Roles = "A")]
+    [Authorize]
+    [Authorize(Roles = "A")]
     public class DepartmanController : Controller
     {
 

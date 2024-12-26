@@ -4,17 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicariOtomasyonProject.Models.Siniflar;
+using PagedList;
+using PagedList.Mvc;
 
-namespace MvcOnlineTicariOtomasyonProject.Controllers
+namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    //[Authorize(Roles = "A")]
     public class KategoriController : Controller
     {
         // GET: Kategori
 
         Context c = new Context();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var degerler = c.Kategoris.ToList();
+            var degerler = c.Kategoris.ToList().ToPagedList(sayfa, 4);
             return View(degerler);
         }
 
@@ -61,18 +64,18 @@ namespace MvcOnlineTicariOtomasyonProject.Controllers
         //    cs.Urunler = new SelectList(c.Uruns, "UrunId", "UrunAd");
         //    return View(cs);
         //}
-        //public JsonResult UrunGetir(int p)
-        //{
-        //    var urunlistesi = (from x in c.Uruns
-        //                       join y in c.Kategoris
-        //                       on x.Kategori.KategoriID equals y.KategoriID
-        //                       where x.Kategori.KategoriID == p
-        //                       select new
-        //                       {
-        //                           Text = x.UrunAd,
-        //                           Value = x.UrunId.ToString()
-        //                       }).ToList();
-        //    return Json(urunlistesi, JsonRequestBehavior.AllowGet);
-        //}
+        public JsonResult UrunGetir(int p)
+        {
+            var urunlistesi = (from x in c.Uruns
+                               join y in c.Kategoris
+                               on x.Kategori.KategoriID equals y.KategoriID
+                               where x.Kategori.KategoriID == p
+                               select new
+                               {
+                                   Text = x.UrunAd,
+                                   Value = x.UrunId.ToString()
+                               }).ToList();
+            return Json(urunlistesi, JsonRequestBehavior.AllowGet);
+        }
     }
 }
