@@ -20,7 +20,6 @@ namespace MvcOnlineTicariOtomasyonProject.Controllers
         }
 
 
-
         public ActionResult Index2()
         {
             var grafikciz = new Chart(600, 600);
