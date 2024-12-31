@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using MvcOnlineTicariOtomasyonProject.Models.Siniflar;
 
-namespace MvcOnlineTicariOtomasyon.Controllers
+namespace MvcOnlineTicariOtomasyonProject.Controllers
 {
     public class CariPanelController : Controller
     {

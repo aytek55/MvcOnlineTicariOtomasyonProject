@@ -7,7 +7,7 @@ using MvcOnlineTicariOtomasyonProject.Models.Siniflar;
 using PagedList;
 using PagedList.Mvc;
 
-namespace MvcOnlineTicariOtomasyon.Controllers
+namespace MvcOnlineTicariOtomasyonProject.Controllers
 {
     //[Authorize(Roles = "A")]
     public class KategoriController : Controller

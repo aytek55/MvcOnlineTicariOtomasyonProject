@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicariOtomasyonProject.Models.Siniflar;
 
-namespace MvcOnlineTicariOtomasyon.Controllers
+namespace MvcOnlineTicariOtomasyonProject.Controllers
 {
     //[Authorize(Roles = "A")]
     public class GaleriController : Controller
