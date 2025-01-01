@@ -83,47 +83,47 @@
 
                         </div>
                     </div>
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="card-header p-2">
-                                <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Mesajlar</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Duyurular</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Ayarlar</a></li>
-                                </ul>
-                            </div><!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="tab-content">
-                                    <div class="active tab-pane" id="activity">
-                                        @foreach (var x in Model)
-                                        {
-                                            <div class="post">
-                                                <div class="user-block">
-                                                    <img class="img-circle img-bordered-sm" src="~/AdminLTE-3.0.4/dist/img/Martz90-Circle-Messages.ico" alt="user image">
-                                                    <span class="username">
-                                                        <a href="#">@x.Gonderici</a>
-                                                        <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                                                    </span>
-                                                    <span class="description">@x.Konu - @x.Tarih</span>
-                                                </div>
-                                                <p>@x.icerik </p>
+                </div>
+                <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-header p-2">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Mesajlar</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Duyurular</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Ayarlar</a></li>
+                            </ul>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <div class="active tab-pane" id="activity">
+                                    @foreach (var x in Model)
+                                    {
+                                        <div class="post">
+                                            <div class="user-block">
+                                                <img class="img-circle img-bordered-sm" src="~/AdminLTE-3.0.4/dist/img/Martz90-Circle-Messages.ico" alt="user image">
+                                                <span class="username">
+                                                    <a href="#">@x.Gonderici</a>
+                                                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                                                </span>
+                                                <span class="description">@x.Konu - @x.Tarih</span>
                                             </div>
-                                        }
-                                    </div>
-                                    <div class="tab-pane" id="timeline">
-
-                                        @*@Html.Action("Partial2", "CariPanel")*@
-
-                                    </div>
-
-                                    <div class="tab-pane" id="settings">
-
-                                        @*@Html.Action("Partial1", "CariPanel")*@
-
-                                    </div>
+                                            <p>@x.icerik </p>
+                                        </div>
+                                    }
                                 </div>
-                            </div><!-- /.card-body -->
-                        </div>
+                                <div class="tab-pane" id="timeline">
+
+                                    @Html.Action("Partial2", "CariPanel")
+
+                                </div>
+
+                                <div class="tab-pane" id="settings">
+
+                                    @Html.Action("Partial1", "CariPanel")
+
+                                </div>
+                            </div>
+                        </div><!-- /.card-body -->
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
