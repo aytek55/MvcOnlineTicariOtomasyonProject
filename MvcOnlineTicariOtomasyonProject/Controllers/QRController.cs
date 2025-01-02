@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace MvcOnlineTicariOtomasyonProject.Controllers
 {
-    //[Authorize(Roles = "A")]
+    [Authorize(Roles = "A")]
     public class QRController : Controller
     {
         private ImageFormat ımageformat;

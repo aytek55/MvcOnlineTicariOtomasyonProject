@@ -8,7 +8,7 @@ using MvcOnlineTicariOtomasyonProject.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyonProject.Controllers
 {
-    //[Authorize(Roles = "A")]
+    [Authorize(Roles = "A")]
     public class PersonelController : Controller
     {
 

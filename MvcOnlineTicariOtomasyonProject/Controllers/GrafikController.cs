@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace MvcOnlineTicariOtomasyonProject.Controllers
 {
-    //[Authorize(Roles = "A")]
+    [Authorize(Roles = "A")]
     public class GrafikController : Controller
     {
         Context c = new Context();

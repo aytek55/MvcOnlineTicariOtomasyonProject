@@ -9,7 +9,7 @@ using PagedList.Mvc;
 
 namespace MvcOnlineTicariOtomasyonProject.Controllers
 {
-    //[Authorize(Roles = "A")]
+    [Authorize(Roles = "A")]
     public class KategoriController : Controller
     {
         // GET: Kategori
@@ -57,13 +57,13 @@ namespace MvcOnlineTicariOtomasyonProject.Controllers
             return RedirectToAction("Index");
         }
 
-        //public ActionResult deneme()
-        //{
-        //    Class3 cs = new Class3();
-        //    cs.Kategoriler = new SelectList(c.Kategoris, "KategoriID", "KategoriAd");
-        //    cs.Urunler = new SelectList(c.Uruns, "UrunId", "UrunAd");
-        //    return View(cs);
-        //}
+        public ActionResult deneme()
+        {
+            Class3 cs = new Class3();
+            cs.Kategoriler = new SelectList(c.Kategoris, "KategoriID", "KategoriAd");
+            cs.Urunler = new SelectList(c.Uruns, "UrunId", "UrunAd");
+            return View(cs);
+        }
         public JsonResult UrunGetir(int p)
         {
             var urunlistesi = (from x in c.Uruns
